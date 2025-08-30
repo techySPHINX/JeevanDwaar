@@ -1,0 +1,14 @@
+{
+  "builds": [
+    {
+      "src": "client/vite.config.ts",
+      "use": "@vercel/vite"
+    }
+  ],
+  "routes": [
+    {
+      "src": "/(.*)",
+      "dest": "/client/index.html"
+    }
+  ]
+}
