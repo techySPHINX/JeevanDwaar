@@ -26,12 +26,13 @@ interface MitraProfile {
 }
 
 export default function Mitra() {
-  const [selectedMitra, setSelectedMitra] = useState<MitraProfile | null>(null);
+  const [_selectedMitra, setSelectedMitra] = useState<MitraProfile | null>(
+    null
+  );
   const [isChatOpen, setIsChatOpen] = useState(false);
   const { language } = useLanguage();
   const isHindi = language === "hindi";
 
-  // Mock data for demonstration - in real app would come from API
   const mockMitras: MitraProfile[] = [
     {
       id: "1",

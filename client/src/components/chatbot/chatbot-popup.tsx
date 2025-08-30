@@ -1,7 +1,7 @@
 
 import { useState } from 'react';
 import { Button } from '@/components/ui/button';
-import { Bot, X } from 'lucide-react';
+import { Bot } from 'lucide-react';
 import { ChatbotInterface } from './chatbot-interface';
 
 export function ChatbotPopup() {

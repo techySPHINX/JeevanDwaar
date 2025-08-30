@@ -28,7 +28,7 @@ import { useLocation } from "wouter";
 export default function AadharLogin() {
   const { language } = useLanguage();
   const { login, sendOTP, isLoading, isAuthenticated } = useAuth();
-  const [location, setLocation] = useLocation();
+  const [_location, setLocation] = useLocation();
 
   const isHindi = language === "hindi";
 
@@ -40,7 +40,7 @@ export default function AadharLogin() {
   const [step, setStep] = useState<"aadhar" | "otp">("aadhar");
   const [aadharId, setAadharId] = useState("");
   const [otp, setOtp] = useState("");
-  const [otpSent, setOtpSent] = useState(false);
+  const [_otpSent, setOtpSent] = useState(false);
   const [countdown, setCountdown] = useState(0);
   const [error, setError] = useState("");
   const [showAadhar, setShowAadhar] = useState(false);
@@ -89,11 +89,9 @@ export default function AadharLogin() {
           isHindi ? "आधार नंबर पंजीकृत नहीं है" : "Aadhar number not registered"
         );
       }
-    } catch (err) {
+    } catch {
       setError(
-        isHindi
-          ? "कुछ गलत हुआ। कृपया पुनः प्रयास करें।"
-          : "Something went wrong. Please try again."
+        isHindi ? "आधार नंबर पंजीकृत नहीं है" : "Aadhar number not registered"
       );
     }
   };
@@ -120,36 +118,13 @@ export default function AadharLogin() {
             : "Invalid OTP. Please try again."
         );
       }
-    } catch (err) {
+    } catch {
       setError(
         isHindi
           ? "लॉगिन में त्रुटि। कृपया पुनः प्रयास करें।"
           : "Login error. Please try again."
       );
     }
-  };
-
-  const containerVariants = {
-    hidden: { opacity: 0 },
-    visible: {
-      opacity: 1,
-      transition: {
-        staggerChildren: 0.1,
-        delayChildren: 0.2,
-      },
-    },
-  };
-
-  const itemVariants = {
-    hidden: { opacity: 0, y: 20 },
-    visible: {
-      opacity: 1,
-      y: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut",
-      },
-    },
   };
 
   const demoCredentials = [

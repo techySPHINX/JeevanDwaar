@@ -18,7 +18,6 @@ const EducationHub = lazy(() => import("@/pages/education-hub"));
 const Mitra = lazy(() => import("@/pages/mitra"));
 const NotFound = lazy(() => import("@/pages/not-found"));
 
-// Authentication Pages
 const AadharLogin = lazy(() => import("@/pages/aadhar-login"));
 const UserDashboard = lazy(() => import("@/pages/user-dashboard"));
 
@@ -29,12 +28,10 @@ const NAVFund = lazy(() => import("@/pages/services/nav-fund"));
 const DownloadForms = lazy(() => import("@/pages/services/download-forms"));
 const NomineeUpdate = lazy(() => import("@/pages/services/nominee-update"));
 
-// Product Pages
 const ProtectionPlans = lazy(() => import("@/pages/products/protection"));
 const ChildPlans = lazy(() => import("@/pages/products/child"));
 const RetirementPlans = lazy(() => import("@/pages/products/retirement"));
 
-// SHG Mitras Map
 const SHGMitrasMap = lazy(() => import("@/pages/shg-mitras-map"));
 
 // Admin Dashboard

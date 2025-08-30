@@ -1,4 +1,3 @@
-import { useState } from "react";
 import { motion } from "framer-motion";
 import { Card, CardContent, CardHeader, CardTitle } from "@/components/ui/card";
 import { Button } from "@/components/ui/button";
@@ -23,7 +22,6 @@ import { useLanguage } from "@/lib/language-context";
 export default function NAVFund() {
   const { language } = useLanguage();
   const isHindi = language === "hindi";
-  const [selectedFund, setSelectedFund] = useState("");
 
   const mockNAVData = [
     {
@@ -216,7 +214,7 @@ export default function NAVFund() {
             <TabsContent value="current" className="space-y-6">
               {/* Current NAV Cards */}
               <div className="grid md:grid-cols-2 lg:grid-cols-2 gap-6">
-                {mockNAVData.map((fund, index) => (
+                {mockNAVData.map((fund, _index) => (
                   <motion.div
                     key={fund.code}
                     variants={itemVariants}

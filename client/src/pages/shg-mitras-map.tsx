@@ -216,9 +216,7 @@ export default function SHGMitrasMap() {
             lng: position.coords.longitude,
           });
         },
-        (error) => {
-          console.log("Error getting location:", error);
-          // Default to Gurgaon if location access denied
+        () => {
           setCurrentLocation({ lat: 28.4595, lng: 77.0266 });
         }
       );

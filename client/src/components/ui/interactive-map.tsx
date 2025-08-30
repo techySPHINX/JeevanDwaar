@@ -1,11 +1,9 @@
-import { useState, useRef, useEffect } from "react";
+import { useState, useRef } from "react";
 import { motion } from "framer-motion";
 import {
   MapPin,
   Plus,
   Minus,
-  Navigation,
-  Maximize,
   RotateCcw,
   Target,
   Layers,

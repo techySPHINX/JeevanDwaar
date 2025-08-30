@@ -21,7 +21,6 @@ interface AuthContextType {
 
 const AuthContext = createContext<AuthContextType | undefined>(undefined);
 
-// Mock user data for demonstration
 const mockUsers: User[] = [
   {
     id: "1",
@@ -52,23 +51,20 @@ const mockUsers: User[] = [
   },
 ];
 
-// Mock OTP - In real implementation, this would be sent via SMS
 const MOCK_OTP = "123456";
 
 export function AuthProvider({ children }: { children: React.ReactNode }) {
   const [user, setUser] = useState<User | null>(null);
   const [isLoading, setIsLoading] = useState(true);
-  const [sentOTP, setSentOTP] = useState<string | null>(null);
+  const [_sentOTP, setSentOTP] = useState<string | null>(null);
 
-  // Check for existing session on app load
   useEffect(() => {
     const storedUser = localStorage.getItem("jeevandwaar_user");
     if (storedUser) {
       try {
         const parsedUser = JSON.parse(storedUser);
         setUser(parsedUser);
-      } catch (error) {
-        console.error("Error parsing stored user:", error);
+      } catch {
         localStorage.removeItem("jeevandwaar_user");
       }
     }

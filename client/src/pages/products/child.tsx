@@ -34,8 +34,7 @@ export default function ChildPlans() {
   const [selectedPlan, setSelectedPlan] = useState("smart-scholar");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleContinue = (age: number) => {
-    console.log("Age entered:", age);
+  const handleContinue = () => {
     setIsModalOpen(false);
   };
 

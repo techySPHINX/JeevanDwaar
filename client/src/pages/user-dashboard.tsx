@@ -13,18 +13,15 @@ import {
   Bell,
   Settings,
   LogOut,
-  Calendar,
   IndianRupee,
   TrendingUp,
   Download,
   Eye,
   Phone,
   Mail,
-  MapPin,
   Edit,
   CheckCircle,
   Clock,
-  AlertTriangle,
 } from "lucide-react";
 import { useLanguage } from "@/lib/language-context";
 import { useAuth } from "@/lib/auth-context";
@@ -33,7 +30,7 @@ import { useLocation } from "wouter";
 export default function UserDashboard() {
   const { language } = useLanguage();
   const { user, logout } = useAuth();
-  const [location, setLocation] = useLocation();
+  const [_location, setLocation] = useLocation();
   const [activeTab, setActiveTab] = useState("overview");
 
   const isHindi = language === "hindi";

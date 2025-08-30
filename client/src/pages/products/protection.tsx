@@ -30,8 +30,8 @@ export default function ProtectionPlans() {
   const [selectedPlan, setSelectedPlan] = useState("term");
   const [isModalOpen, setIsModalOpen] = useState(false);
 
-  const handleContinue = (age: number) => {
-    console.log("Age entered:", age);
+  const handleContinue = () => {
+    // TODO: Handle age entry and proceed with plan selection
     setIsModalOpen(false);
   };
 

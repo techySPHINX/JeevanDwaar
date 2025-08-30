@@ -13,10 +13,19 @@ interface FormData {
   goal?: string;
 }
 
+interface Recommendation {
+  plan: string;
+  coverAmount: string;
+  monthlyPremium: string;
+  formData: FormData;
+}
+
 export function RecommendationForm() {
   const [step, setStep] = useState(1);
   const [formData, setFormData] = useState<FormData>({});
-  const [recommendation, setRecommendation] = useState<any>(null);
+  const [recommendation, setRecommendation] = useState<Recommendation | null>(
+    null
+  );
   const { language } = useLanguage();
 
   const isHindi = language === "hindi";
@@ -109,7 +118,7 @@ export function RecommendationForm() {
     }
   };
 
-  const updateFormData = (field: keyof FormData, value: any) => {
+  const updateFormData = (field: keyof FormData, value: string | number) => {
     setFormData((prev) => ({ ...prev, [field]: value }));
   };
 

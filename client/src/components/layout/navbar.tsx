@@ -4,14 +4,12 @@ import { Shield, Menu, X } from "lucide-react";
 import { Button } from "@/components/ui/button";
 import { LanguageToggle } from "@/components/ui/language-toggle";
 import { useLanguage } from "@/lib/language-context";
-import { useAuth } from "@/lib/auth-context";
 import { ServicesBar } from "./services-bar";
 
 export function Navbar() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [location] = useLocation();
   const { t } = useLanguage();
-  const { isAuthenticated } = useAuth();
 
   const navigation = [
     { name: t("home"), href: "/", key: "home" },

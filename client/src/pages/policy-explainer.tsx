@@ -1,23 +1,23 @@
-import { Volume2, Mic } from 'lucide-react';
-import { Card, CardContent } from '@/components/ui/card';
-import { useLanguage } from '@/lib/language-context';
-import { AudioPlayer } from '@/components/policy/audio-player';
-import { PolicyFactsGrid } from '@/components/policy/policy-card';
-import { Button } from '@/components/ui/button';
+import { Mic } from "lucide-react";
+import { Card, CardContent } from "@/components/ui/card";
+import { useLanguage } from "@/lib/language-context";
+import { AudioPlayer } from "@/components/policy/audio-player";
+import { PolicyFactsGrid } from "@/components/policy/policy-card";
+import { Button } from "@/components/ui/button";
 
 export default function PolicyExplainer() {
   const { language } = useLanguage();
-  const isHindi = language === 'hindi';
+  const isHindi = language === "hindi";
 
   const audioSummaries = [
     {
       title: isHindi ? "मुख्य बहिष्करण" : "Main Exclusions",
-      icon: <Mic className="text-primary" size={16} />
+      icon: <Mic className="text-primary" size={16} />,
     },
     {
       title: isHindi ? "क्लेम प्रक्रिया" : "Claim Process",
-      icon: <Mic className="text-primary" size={16} />
-    }
+      icon: <Mic className="text-primary" size={16} />,
+    },
   ];
 
   return (
@@ -28,7 +28,9 @@ export default function PolicyExplainer() {
             {isHindi ? "पॉलिसी समझाने वाला" : "Policy Explainer"}
           </h1>
           <p className="text-lg text-muted-foreground">
-            {isHindi ? "आवाज़ में सुनें, आसान भाषा में समझें" : "Listen in voice, understand in simple language"}
+            {isHindi
+              ? "आवाज़ में सुनें, आसान भाषा में समझें"
+              : "Listen in voice, understand in simple language"}
           </p>
         </div>
 
@@ -44,7 +46,10 @@ export default function PolicyExplainer() {
             {/* Quick Audio Summaries */}
             <div className="space-y-3">
               {audioSummaries.map((summary, index) => (
-                <div key={index} className="flex items-center justify-between p-4 bg-accent rounded-lg">
+                <div
+                  key={index}
+                  className="flex items-center justify-between p-4 bg-accent rounded-lg"
+                >
                   <div className="flex items-center space-x-3">
                     {summary.icon}
                     <span className="font-medium">{summary.title}</span>
@@ -67,7 +72,7 @@ export default function PolicyExplainer() {
             <h3 className="text-xl font-semibold text-foreground">
               {isHindi ? "मुख्य तथ्य" : "Key Facts"}
             </h3>
-            
+
             <PolicyFactsGrid />
           </div>
         </div>
@@ -78,7 +83,7 @@ export default function PolicyExplainer() {
             <h2 className="text-2xl font-bold text-foreground mb-6 text-center">
               {isHindi ? "महत्वपूर्ण दस्तावेज" : "Important Documents"}
             </h2>
-            
+
             <div className="grid md:grid-cols-3 gap-6">
               <Card className="hover:shadow-md transition-shadow">
                 <CardContent className="p-6 text-center">
@@ -89,9 +94,15 @@ export default function PolicyExplainer() {
                     {isHindi ? "पॉलिसी दस्तावेज" : "Policy Document"}
                   </h3>
                   <p className="text-sm text-muted-foreground mb-4">
-                    {isHindi ? "पूर्ण नियम और शर्तें" : "Complete terms and conditions"}
+                    {isHindi
+                      ? "पूर्ण नियम और शर्तें"
+                      : "Complete terms and conditions"}
                   </p>
-                  <Button variant="outline" size="sm" data-testid="download-policy">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    data-testid="download-policy"
+                  >
                     {isHindi ? "डाउनलोड करें" : "Download"}
                   </Button>
                 </CardContent>
@@ -106,9 +117,15 @@ export default function PolicyExplainer() {
                     {isHindi ? "क्लेम फॉर्म" : "Claim Form"}
                   </h3>
                   <p className="text-sm text-muted-foreground mb-4">
-                    {isHindi ? "बीमा राशि प्राप्त करने के लिए" : "To claim insurance amount"}
+                    {isHindi
+                      ? "बीमा राशि प्राप्त करने के लिए"
+                      : "To claim insurance amount"}
                   </p>
-                  <Button variant="outline" size="sm" data-testid="download-claim-form">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    data-testid="download-claim-form"
+                  >
                     {isHindi ? "डाउनलोड करें" : "Download"}
                   </Button>
                 </CardContent>
@@ -125,7 +142,11 @@ export default function PolicyExplainer() {
                   <p className="text-sm text-muted-foreground mb-4">
                     {isHindi ? "अपना प्रीमियम जानें" : "Calculate your premium"}
                   </p>
-                  <Button variant="outline" size="sm" data-testid="open-calculator">
+                  <Button
+                    variant="outline"
+                    size="sm"
+                    data-testid="open-calculator"
+                  >
                     {isHindi ? "गणना करें" : "Calculate"}
                   </Button>
                 </CardContent>

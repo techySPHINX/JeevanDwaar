@@ -11,7 +11,6 @@ import {
   TrendingUp,
   Building,
   Globe,
-  Calendar,
   CheckCircle,
   Star,
 } from "lucide-react";
