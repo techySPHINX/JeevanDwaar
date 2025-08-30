@@ -280,8 +280,8 @@ export default function SHGMitrasMap() {
   };
 
   const mapMitras = filteredMitras.map((mitra, index) => {
-    const baseX = 250; // Center X
-    const baseY = 200; // Center Y
+    const baseX = 250;
+    const baseY = 200;
     const positions = [
       { x: baseX - 80, y: baseY - 60 }, // Top-left area
       { x: baseX + 90, y: baseY - 40 }, // Top-right area
@@ -313,7 +313,6 @@ export default function SHGMitrasMap() {
   return (
     <div className="min-h-screen bg-gradient-to-br from-green/5 to-blue/10 py-8">
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        {/* Hero Section */}
         <motion.div
           className="text-center mb-12"
           initial={{ opacity: 0, y: -20 }}
@@ -334,7 +333,10 @@ export default function SHGMitrasMap() {
             >
               <MapPin className="text-green-600" size={56} />
             </motion.div>
-            {isHindi ? "नजदीकी SHG मित्र" : "Nearby SHG Mitras"}
+            {isHindi ? "नजदीकी " : "Nearby "}
+            <span className="text-blue-500">
+              {isHindi ? "SHG मित्र" : "SHG Mitras"}
+            </span>
           </h1>
           <p className="text-xl text-muted-foreground max-w-4xl mx-auto leading-relaxed">
             {isHindi
@@ -343,7 +345,6 @@ export default function SHGMitrasMap() {
           </p>
         </motion.div>
 
-        {/* Search and Filter Section */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={{ opacity: 1, y: 0 }}

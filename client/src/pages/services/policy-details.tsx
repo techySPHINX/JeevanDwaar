@@ -73,7 +73,7 @@ export default function PolicyDetails() {
         </Card>
 
         {/* Policy Information */}
-        <div className="grid lg:grid-cols-3 gap-8">
+        <div className="grid lg:grid-cols-4 gap-8">
           <div className="lg:col-span-2">
             <Card>
               <CardHeader>
@@ -169,37 +169,42 @@ export default function PolicyDetails() {
                 </Button>
               </CardContent>
             </Card>
+          </div>
 
-            <Card className="mt-6">
+          <div>
+            <Card>
               <CardHeader>
                 <CardTitle>
                   {isHindi ? "संपर्क सहायता" : "Contact Support"}
                 </CardTitle>
               </CardHeader>
               <CardContent>
-                <div className="space-y-2 text-sm">
+                <div className="grid grid-cols-1 gap-4">
                   <div>
-                    <span className="font-medium">
-                      {isHindi ? "ग्राहक सेवा:" : "Customer Care:"}
-                    </span>
-                    <br />
-                    1800-267-9090
+                    <Label className="text-sm text-muted-foreground">
+                      {isHindi ? "ग्राहक सेवा" : "Customer Care"}
+                    </Label>
+                    <div className="font-medium text-lg text-primary">
+                      1800-267-9090
+                    </div>
                   </div>
                   <div>
-                    <span className="font-medium">
-                      {isHindi ? "ईमेल:" : "Email:"}
-                    </span>
-                    <br />
-                    care@sbilife.co.in
+                    <Label className="text-sm text-muted-foreground">
+                      {isHindi ? "ईमेल" : "Email"}
+                    </Label>
+                    <div className="font-medium text-lg text-blue-600">
+                      care@sbilife.co.in
+                    </div>
                   </div>
                   <div>
-                    <span className="font-medium">
-                      {isHindi ? "समय:" : "Timing:"}
-                    </span>
-                    <br />
-                    {isHindi
-                      ? "सोमवार - शनिवार 10AM - 7PM"
-                      : "Monday - Saturday 10AM - 7PM"}
+                    <Label className="text-sm text-muted-foreground">
+                      {isHindi ? "समय" : "Timing"}
+                    </Label>
+                    <div className="font-medium text-lg text-green-600">
+                      {isHindi
+                        ? "सोमवार - शनिवार 10AM - 7PM"
+                        : "Monday - Saturday 10AM - 7PM"}
+                    </div>
                   </div>
                 </div>
               </CardContent>

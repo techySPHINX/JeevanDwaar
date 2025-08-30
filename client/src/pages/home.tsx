@@ -52,8 +52,7 @@ export default function Home() {
                 <h1 className="text-4xl md:text-5xl font-bold text-foreground leading-tight">
                   {isHindi ? (
                     <>
-                      जीवन बीमा{" "}
-                      <span className="text-primary">सरल बनाया</span>
+                      जीवन बीमा <span className="text-primary">सरल बनाया</span>
                     </>
                   ) : (
                     <>
@@ -63,23 +62,21 @@ export default function Home() {
                   )}
                 </h1>
                 <p className="text-xl text-muted-foreground">
-                  {isHindi 
+                  {isHindi
                     ? "आपकी भाषा में • Life Insurance Made Simple – In Your Language"
-                    : "In Your Language • आपकी भाषा में – जीवन बीमा सरल बनाया"
-                  }
+                    : "In Your Language • आपकी भाषा में – जीवन बीमा सरल बनाया"}
                 </p>
                 <p className="text-lg text-muted-foreground leading-relaxed">
-                  {isHindi 
+                  {isHindi
                     ? "विश्वसनीय, पारदर्शी, और समझने योग्य जीवन बीमा। ग्रामीण और अर्ध-शहरी परिवारों के लिए विशेष रूप से डिज़ाइन किया गया।"
-                    : "Trusted, transparent, and understandable life insurance. Specially designed for rural and semi-urban families."
-                  }
+                    : "Trusted, transparent, and understandable life insurance. Specially designed for rural and semi-urban families."}
                 </p>
               </div>
 
               <div className="flex flex-col sm:flex-row gap-4">
                 <Link href="/policy-explainer">
-                  <Button 
-                    size="lg" 
+                  <Button
+                    size="lg"
                     className="w-full sm:w-auto"
                     data-testid="find-policy-button"
                   >
@@ -88,14 +85,16 @@ export default function Home() {
                   </Button>
                 </Link>
                 <Link href="/education">
-                  <Button 
-                    variant="outline" 
-                    size="lg" 
+                  <Button
+                    variant="outline"
+                    size="lg"
                     className="w-full sm:w-auto border-2 border-primary text-primary hover:bg-primary/5"
                     data-testid="learn-insurance-button"
                   >
                     <GraduationCap className="mr-2" size={20} />
-                    {isHindi ? "बीमा के बारे में जानें" : "Learn About Insurance"}
+                    {isHindi
+                      ? "बीमा के बारे में जानें"
+                      : "Learn About Insurance"}
                   </Button>
                 </Link>
               </div>
@@ -104,20 +103,24 @@ export default function Home() {
               <div className="grid grid-cols-3 gap-6 pt-8">
                 {stats.map((stat, index) => (
                   <div key={index} className="text-center">
-                    <div className="text-2xl font-bold text-primary">{stat.value}</div>
-                    <div className="text-sm text-muted-foreground">{stat.label}</div>
+                    <div className="text-2xl font-bold text-primary">
+                      {stat.value}
+                    </div>
+                    <div className="text-sm text-muted-foreground">
+                      {stat.label}
+                    </div>
                   </div>
                 ))}
               </div>
             </div>
 
             <div className="relative">
-              <img 
-                src="https://images.unsplash.com/photo-1531983412531-1f49a365ffed?ixlib=rb-4.0.3&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D&auto=format&fit=crop&w=800&h=600" 
-                alt="Happy Indian family representing life insurance security" 
+              <img
+                src="https://res.cloudinary.com/dur0hveo4/image/upload/v1756580569/build_vkz4zf.png"
+                alt="Happy Indian family representing life insurance security"
                 className="rounded-2xl shadow-2xl w-full"
               />
-              
+
               {/* Floating Trust Indicators */}
               <Card className="absolute -top-4 -left-4 shadow-lg">
                 <CardContent className="p-4">
@@ -127,7 +130,7 @@ export default function Home() {
                   </div>
                 </CardContent>
               </Card>
-              
+
               <Card className="absolute -bottom-4 -right-4 shadow-lg">
                 <CardContent className="p-4">
                   <div className="flex items-center space-x-2">
@@ -147,10 +150,14 @@ export default function Home() {
           <div className="text-center mb-12">
             <h2 className="text-3xl font-bold text-destructive mb-4 flex items-center justify-center">
               <AlertTriangle className="mr-2" size={28} />
-              {isHindi ? "3 बातें जो आपको पता होनी चाहिए" : "3 Things You Must Know"}
+              {isHindi
+                ? "3 बातें जो आपको पता होनी चाहिए"
+                : "3 Things You Must Know"}
             </h2>
             <p className="text-lg text-muted-foreground">
-              {isHindi ? "हर पॉलिसी के लिए महत्वपूर्ण जानकारी" : "Important information for every policy"}
+              {isHindi
+                ? "हर पॉलिसी के लिए महत्वपूर्ण जानकारी"
+                : "Important information for every policy"}
             </p>
           </div>
 
@@ -158,13 +165,19 @@ export default function Home() {
             {threeThings.map((item, index) => (
               <Card key={index} className="hover:shadow-md transition-shadow">
                 <CardContent className="p-6 text-center">
-                  <div className={`w-16 h-16 ${item.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}>
+                  <div
+                    className={`w-16 h-16 ${item.bgColor} rounded-full flex items-center justify-center mx-auto mb-4`}
+                  >
                     {item.icon}
                   </div>
                   <h3 className="text-xl font-semibold mb-2">{item.title}</h3>
-                  <p className="text-muted-foreground mb-4">{item.description}</p>
+                  <p className="text-muted-foreground mb-4">
+                    {item.description}
+                  </p>
                   <div className="p-3 bg-accent rounded-lg">
-                    <span className="font-bold text-accent-foreground">{item.example}</span>
+                    <span className="font-bold text-accent-foreground">
+                      {item.example}
+                    </span>
                   </div>
                 </CardContent>
               </Card>
@@ -181,7 +194,9 @@ export default function Home() {
               {isHindi ? "आज ही शुरू करें" : "Get Started Today"}
             </h2>
             <p className="text-lg text-muted-foreground">
-              {isHindi ? "आपकी जरूरतों के अनुसार सबसे अच्छी पॉलिसी चुनें" : "Choose the best policy according to your needs"}
+              {isHindi
+                ? "आपकी जरूरतों के अनुसार सबसे अच्छी पॉलिसी चुनें"
+                : "Choose the best policy according to your needs"}
             </p>
           </div>
 
@@ -194,7 +209,9 @@ export default function Home() {
                     {isHindi ? "पॉलिसी समझें" : "Understand Policy"}
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    {isHindi ? "आसान भाषा में जानें" : "Learn in simple language"}
+                    {isHindi
+                      ? "आसान भाषा में जानें"
+                      : "Learn in simple language"}
                   </p>
                 </CardContent>
               </Card>
@@ -208,7 +225,9 @@ export default function Home() {
                     {isHindi ? "AI सुझाव" : "AI Recommendation"}
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    {isHindi ? "व्यक्तिगत सुझाव पाएं" : "Get personalized suggestions"}
+                    {isHindi
+                      ? "व्यक्तिगत सुझाव पाएं"
+                      : "Get personalized suggestions"}
                   </p>
                 </CardContent>
               </Card>
@@ -217,7 +236,10 @@ export default function Home() {
             <Link href="/education">
               <Card className="hover:shadow-md transition-shadow cursor-pointer">
                 <CardContent className="p-6 text-center">
-                  <GraduationCap className="mx-auto mb-4 text-chart-3" size={48} />
+                  <GraduationCap
+                    className="mx-auto mb-4 text-chart-3"
+                    size={48}
+                  />
                   <h3 className="font-semibold mb-2">
                     {isHindi ? "शिक्षा केंद्र" : "Education Hub"}
                   </h3>
@@ -242,15 +264,24 @@ export default function Home() {
               </Card>
             </Link>
 
-            <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer">
+            <a
+              href="https://wa.me/91XXXXXXXXXX"
+              target="_blank"
+              rel="noopener noreferrer"
+            >
               <Card className="hover:shadow-md transition-shadow cursor-pointer">
                 <CardContent className="p-6 text-center">
-                  <Smartphone className="mx-auto mb-4 text-green-500" size={48} />
+                  <Smartphone
+                    className="mx-auto mb-4 text-green-500"
+                    size={48}
+                  />
                   <h3 className="font-semibold mb-2">
                     {isHindi ? "WhatsApp सहायता" : "WhatsApp Support"}
                   </h3>
                   <p className="text-sm text-muted-foreground">
-                    {isHindi ? "WhatsApp पर हमसे चैट करें" : "Chat with us on WhatsApp"}
+                    {isHindi
+                      ? "WhatsApp पर हमसे चैट करें"
+                      : "Chat with us on WhatsApp"}
                   </p>
                 </CardContent>
               </Card>
