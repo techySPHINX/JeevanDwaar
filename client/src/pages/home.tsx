@@ -1,5 +1,5 @@
 import { useState } from 'react';
-import { Search, GraduationCap, Shield, Calendar, XCircle, Phone, AlertTriangle } from 'lucide-react';
+import { Search, GraduationCap, Shield, Calendar, XCircle, Phone, AlertTriangle, Smartphone } from 'lucide-react';
 import { Button } from '@/components/ui/button';
 import { Card, CardContent } from '@/components/ui/card';
 import { Link } from 'wouter';
@@ -185,7 +185,7 @@ export default function Home() {
             </p>
           </div>
 
-          <div className="grid md:grid-cols-2 lg:grid-cols-4 gap-6">
+          <div className="grid md:grid-cols-2 lg:grid-cols-3 gap-6">
             <Link href="/policy-explainer">
               <Card className="hover:shadow-md transition-shadow cursor-pointer">
                 <CardContent className="p-6 text-center">
@@ -241,6 +241,20 @@ export default function Home() {
                 </CardContent>
               </Card>
             </Link>
+
+            <a href="https://wa.me/91XXXXXXXXXX" target="_blank" rel="noopener noreferrer">
+              <Card className="hover:shadow-md transition-shadow cursor-pointer">
+                <CardContent className="p-6 text-center">
+                  <Smartphone className="mx-auto mb-4 text-green-500" size={48} />
+                  <h3 className="font-semibold mb-2">
+                    {isHindi ? "WhatsApp सहायता" : "WhatsApp Support"}
+                  </h3>
+                  <p className="text-sm text-muted-foreground">
+                    {isHindi ? "WhatsApp पर हमसे चैट करें" : "Chat with us on WhatsApp"}
+                  </p>
+                </CardContent>
+              </Card>
+            </a>
           </div>
         </div>
       </section>
