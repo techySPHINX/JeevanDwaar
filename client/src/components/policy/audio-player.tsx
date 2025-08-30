@@ -15,7 +15,6 @@ export function AudioPlayer({ title, duration, language }: AudioPlayerProps) {
 
   const handlePlay = () => {
     setIsPlaying(!isPlaying);
-    // In a real app, this would control actual audio playback
   };
 
   const isHindi = currentLang === 'hindi';

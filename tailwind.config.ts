@@ -130,7 +130,6 @@ export default {
   plugins: [
     require("tailwindcss-animate"), 
     require("@tailwindcss/typography"),
-    // Custom plugin for insurance-specific utilities
     function({ addUtilities }: any) {
       addUtilities({
         '.insurance-card': {

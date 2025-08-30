@@ -1,11 +1,10 @@
-import { useState } from 'react';
-import { Button } from '@/components/ui/button';
-import { Card, CardContent } from '@/components/ui/card';
-import { Progress } from '@/components/ui/progress';
-import { GraduationCap, Home, PiggyBank, Lightbulb, Info } from 'lucide-react';
-import { useLanguage } from '@/lib/language-context';
-import { useMutation } from '@tanstack/react-query';
-import { apiRequest } from '@/lib/queryClient';
+import { useState } from "react";
+import { Button } from "@/components/ui/button";
+import { Card, CardContent } from "@/components/ui/card";
+import { Progress } from "@/components/ui/progress";
+import { GraduationCap, Home, PiggyBank, Lightbulb, Info } from "lucide-react";
+import { useLanguage } from "@/lib/language-context";
+import { useMutation } from "@tanstack/react-query";
 
 interface FormData {
   age?: number;
@@ -19,63 +18,81 @@ export function RecommendationForm() {
   const [formData, setFormData] = useState<FormData>({});
   const [recommendation, setRecommendation] = useState<any>(null);
   const { language } = useLanguage();
-  
-  const isHindi = language === 'hindi';
+
+  const isHindi = language === "hindi";
   const totalSteps = 4;
   const progress = (step / totalSteps) * 100;
 
+  // Mock recommendation generator for frontend-only UI
   const createRecommendation = useMutation({
     mutationFn: async (data: FormData) => {
-      const response = await apiRequest('POST', '/api/recommendations', {
-        sessionId: `session_${Date.now()}`,
-        age: data.age,
-        income: data.income,
-        dependents: data.dependents,
-        goal: data.goal
-      });
-      return response.json();
+      // Simulate API delay
+      await new Promise((resolve) => setTimeout(resolve, 1000));
+
+      // Generate mock recommendation based on form data
+      let recommendedPlan = "basic";
+      let coverAmount = "₹2 लाख";
+      let monthlyPremium = "₹25";
+
+      // Logic to determine recommendation based on form data
+      if (data.income === "high" || data.dependents! >= 4) {
+        recommendedPlan = "premium";
+        coverAmount = "₹10 लाख";
+        monthlyPremium = "₹100";
+      } else if (data.income === "medium" || data.dependents! >= 2) {
+        recommendedPlan = "standard";
+        coverAmount = "₹5 लाख";
+        monthlyPremium = "₹50";
+      }
+
+      return {
+        plan: recommendedPlan,
+        coverAmount,
+        monthlyPremium,
+        formData: data,
+      };
     },
     onSuccess: (data) => {
       setRecommendation(data);
-    }
+    },
   });
 
   const ageGroups = [
     { value: 25, label: isHindi ? "18-30 साल" : "18-30 years" },
     { value: 38, label: isHindi ? "31-45 साल" : "31-45 years" },
     { value: 53, label: isHindi ? "46-60 साल" : "46-60 years" },
-    { value: 65, label: isHindi ? "60+ साल" : "60+ years" }
+    { value: 65, label: isHindi ? "60+ साल" : "60+ years" },
   ];
 
   const incomeRanges = [
     { value: "low", label: "₹15,000 तक" },
     { value: "medium", label: "₹15,000 - ₹50,000" },
-    { value: "high", label: "₹50,000 से अधिक" }
+    { value: "high", label: "₹50,000 से अधिक" },
   ];
 
   const dependentCounts = [
     { value: 0, label: isHindi ? "कोई नहीं" : "None" },
     { value: 2, label: isHindi ? "1-2 लोग" : "1-2 people" },
     { value: 4, label: isHindi ? "3-4 लोग" : "3-4 people" },
-    { value: 6, label: isHindi ? "5+ लोग" : "5+ people" }
+    { value: 6, label: isHindi ? "5+ लोग" : "5+ people" },
   ];
 
   const goals = [
-    { 
-      value: "education", 
+    {
+      value: "education",
       label: isHindi ? "बच्चों की शिक्षा" : "Children's Education",
-      icon: <GraduationCap className="mb-2 text-chart-3" size={24} />
+      icon: <GraduationCap className="mb-2 text-chart-3" size={24} />,
     },
-    { 
-      value: "protection", 
+    {
+      value: "protection",
       label: isHindi ? "परिवार की सुरक्षा" : "Family Protection",
-      icon: <Home className="mb-2 text-chart-2" size={24} />
+      icon: <Home className="mb-2 text-chart-2" size={24} />,
     },
-    { 
-      value: "retirement", 
+    {
+      value: "retirement",
       label: isHindi ? "रिटायरमेंट प्लानिंग" : "Retirement Planning",
-      icon: <PiggyBank className="mb-2 text-chart-4" size={24} />
-    }
+      icon: <PiggyBank className="mb-2 text-chart-4" size={24} />,
+    },
   ];
 
   const handleNext = () => {
@@ -93,16 +110,21 @@ export function RecommendationForm() {
   };
 
   const updateFormData = (field: keyof FormData, value: any) => {
-    setFormData(prev => ({ ...prev, [field]: value }));
+    setFormData((prev) => ({ ...prev, [field]: value }));
   };
 
   const isStepComplete = () => {
     switch (step) {
-      case 1: return formData.age !== undefined;
-      case 2: return formData.income !== undefined;
-      case 3: return formData.dependents !== undefined;
-      case 4: return formData.goal !== undefined;
-      default: return false;
+      case 1:
+        return formData.age !== undefined;
+      case 2:
+        return formData.income !== undefined;
+      case 3:
+        return formData.dependents !== undefined;
+      case 4:
+        return formData.goal !== undefined;
+      default:
+        return false;
     }
   };
 
@@ -113,14 +135,16 @@ export function RecommendationForm() {
           <Lightbulb className="mr-2" size={20} />
           {isHindi ? "आपके लिए सुझाई गई पॉलिसी" : "Recommended Policy for You"}
         </h3>
-        
+
         <div className="grid md:grid-cols-3 gap-6">
           <Card className="hover:shadow-md transition-shadow">
             <CardContent className="p-4 text-center">
               <div className="text-sm text-muted-foreground mb-1">
                 {isHindi ? "मूल योजना" : "Basic Plan"}
               </div>
-              <div className="text-2xl font-bold text-primary mb-2">₹25/माह</div>
+              <div className="text-2xl font-bold text-primary mb-2">
+                ₹25/माह
+              </div>
               <div className="text-sm text-muted-foreground">₹2 लाख कवर</div>
             </CardContent>
           </Card>
@@ -140,7 +164,9 @@ export function RecommendationForm() {
               <div className="text-sm text-muted-foreground mb-1">
                 {isHindi ? "प्रीमियम योजना" : "Premium Plan"}
               </div>
-              <div className="text-2xl font-bold text-primary mb-2">₹100/माह</div>
+              <div className="text-2xl font-bold text-primary mb-2">
+                ₹100/माह
+              </div>
               <div className="text-sm text-muted-foreground">₹10 लाख कवर</div>
             </CardContent>
           </Card>
@@ -150,19 +176,20 @@ export function RecommendationForm() {
           <Info className="text-chart-3" size={20} />
           <div>
             <div className="font-medium text-chart-3">
-              {isHindi ? "प्रीमियम बदलाव की जानकारी" : "Premium Change Information"}
+              {isHindi
+                ? "प्रीमियम बदलाव की जानकारी"
+                : "Premium Change Information"}
             </div>
             <div className="text-sm text-muted-foreground">
-              {isHindi 
+              {isHindi
                 ? "5 साल बाद: ₹75/माह | 10 साल बाद: ₹125/माह"
-                : "After 5 years: ₹75/month | After 10 years: ₹125/month"
-              }
+                : "After 5 years: ₹75/month | After 10 years: ₹125/month"}
             </div>
           </div>
         </div>
 
-        <Button 
-          className="w-full mt-6" 
+        <Button
+          className="w-full mt-6"
           size="lg"
           data-testid="select-policy-button"
         >
@@ -182,7 +209,9 @@ export function RecommendationForm() {
               {isHindi ? "प्रगति" : "Progress"}
             </span>
             <span className="text-sm text-muted-foreground">
-              {isHindi ? `चरण ${step} of ${totalSteps}` : `Step ${step} of ${totalSteps}`}
+              {isHindi
+                ? `चरण ${step} of ${totalSteps}`
+                : `Step ${step} of ${totalSteps}`}
             </span>
           </div>
           <Progress value={progress} className="w-full" />
@@ -199,9 +228,11 @@ export function RecommendationForm() {
                 {ageGroups.map((group) => (
                   <Button
                     key={group.value}
-                    variant={formData.age === group.value ? "default" : "outline"}
+                    variant={
+                      formData.age === group.value ? "default" : "outline"
+                    }
                     className="p-4 font-medium"
-                    onClick={() => updateFormData('age', group.value)}
+                    onClick={() => updateFormData("age", group.value)}
                     data-testid={`age-${group.value}`}
                   >
                     {group.label}
@@ -214,15 +245,19 @@ export function RecommendationForm() {
           {step === 2 && (
             <div>
               <label className="block text-lg font-semibold text-foreground mb-4">
-                {isHindi ? "आपकी मासिक आय क्या है?" : "What is your monthly income?"}
+                {isHindi
+                  ? "आपकी मासिक आय क्या है?"
+                  : "What is your monthly income?"}
               </label>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {incomeRanges.map((range) => (
                   <Button
                     key={range.value}
-                    variant={formData.income === range.value ? "default" : "outline"}
+                    variant={
+                      formData.income === range.value ? "default" : "outline"
+                    }
                     className="p-4 font-medium"
-                    onClick={() => updateFormData('income', range.value)}
+                    onClick={() => updateFormData("income", range.value)}
                     data-testid={`income-${range.value}`}
                   >
                     {range.label}
@@ -235,15 +270,21 @@ export function RecommendationForm() {
           {step === 3 && (
             <div>
               <label className="block text-lg font-semibold text-foreground mb-4">
-                {isHindi ? "आप पर कितने लोग निर्भर हैं?" : "How many people depend on you?"}
+                {isHindi
+                  ? "आप पर कितने लोग निर्भर हैं?"
+                  : "How many people depend on you?"}
               </label>
               <div className="grid grid-cols-2 md:grid-cols-4 gap-4">
                 {dependentCounts.map((count) => (
                   <Button
                     key={count.value}
-                    variant={formData.dependents === count.value ? "default" : "outline"}
+                    variant={
+                      formData.dependents === count.value
+                        ? "default"
+                        : "outline"
+                    }
                     className="p-4 font-medium"
-                    onClick={() => updateFormData('dependents', count.value)}
+                    onClick={() => updateFormData("dependents", count.value)}
                     data-testid={`dependents-${count.value}`}
                   >
                     {count.label}
@@ -256,15 +297,19 @@ export function RecommendationForm() {
           {step === 4 && (
             <div>
               <label className="block text-lg font-semibold text-foreground mb-4">
-                {isHindi ? "आपका मुख्य लक्ष्य क्या है?" : "What is your main goal?"}
+                {isHindi
+                  ? "आपका मुख्य लक्ष्य क्या है?"
+                  : "What is your main goal?"}
               </label>
               <div className="grid grid-cols-1 md:grid-cols-3 gap-4">
                 {goals.map((goal) => (
                   <Button
                     key={goal.value}
-                    variant={formData.goal === goal.value ? "default" : "outline"}
+                    variant={
+                      formData.goal === goal.value ? "default" : "outline"
+                    }
                     className="p-4 font-medium h-auto flex flex-col"
-                    onClick={() => updateFormData('goal', goal.value)}
+                    onClick={() => updateFormData("goal", goal.value)}
                     data-testid={`goal-${goal.value}`}
                   >
                     {goal.icon}
@@ -291,12 +336,17 @@ export function RecommendationForm() {
             disabled={!isStepComplete() || createRecommendation.isPending}
             data-testid="next-button"
           >
-            {createRecommendation.isPending 
-              ? (isHindi ? "प्रोसेसिंग..." : "Processing...")
-              : step === totalSteps 
-                ? (isHindi ? "सुझाव प्राप्त करें" : "Get Recommendation")
-                : (isHindi ? "अगला चरण" : "Next Step")
-            }
+            {createRecommendation.isPending
+              ? isHindi
+                ? "प्रोसेसिंग..."
+                : "Processing..."
+              : step === totalSteps
+              ? isHindi
+                ? "सुझाव प्राप्त करें"
+                : "Get Recommendation"
+              : isHindi
+              ? "अगला चरण"
+              : "Next Step"}
           </Button>
         </div>
       </CardContent>

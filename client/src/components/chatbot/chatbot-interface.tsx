@@ -5,7 +5,6 @@ import { Card, CardContent } from '@/components/ui/card';
 import { Bot, User, Send, X } from 'lucide-react';
 import { useLanguage } from '@/lib/language-context';
 import { useMutation } from '@tanstack/react-query';
-import { apiRequest } from '@/lib/queryClient';
 
 interface Message {
   id: string;
@@ -35,12 +34,20 @@ export function ChatbotInterface({ isOpen = true, onClose }: ChatbotInterfacePro
 
   const sendMessage = useMutation({
     mutationFn: async (question: string) => {
-      const response = await apiRequest('POST', '/api/chatbot/query', {
-        sessionId: `session_${Date.now()}`,
-        question,
-        language
-      });
-      return response.json();
+      await new Promise((resolve) => setTimeout(resolve, 800));
+      let answer = '';
+      if (question.toLowerCase().includes('premium')) {
+        answer = isHindi ? 'आप अपनी प्रीमियम भुगतान ऑनलाइन कर सकते हैं।' : 'You can pay your premium online.';
+      } else if (question.toLowerCase().includes('claim')) {
+        answer = isHindi ? 'क्लेम की स्थिति जानने के लिए अपनी पॉलिसी आईडी दर्ज करें।' : 'Enter your policy ID to check claim status.';
+      } else if (question.toLowerCase().includes('policy')) {
+        answer = isHindi ? 'यहाँ आपकी पॉलिसी का विवरण है।' : 'Here are your policy details.';
+      } else if (question.toLowerCase().includes('nominee')) {
+        answer = isHindi ? 'नॉमिनी बदलने के लिए फॉर्म भरें।' : 'Fill out the form to change nominee.';
+      } else {
+        answer = isHindi ? 'माफ़ कीजिए, कृपया अधिक स्पष्ट प्रश्न पूछें।' : 'Sorry, please ask a more specific question.';
+      }
+      return { answer };
     },
     onSuccess: (data) => {
       setMessages(prev => [...prev, {

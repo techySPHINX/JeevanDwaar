@@ -1,11 +1,17 @@
-import { Shield, Phone, Mail, MapPin } from 'lucide-react';
-import { Link } from 'wouter';
-import { useLanguage } from '@/lib/language-context';
+import { Shield, Phone, Mail, MapPin } from "lucide-react";
+import { Link, useLocation } from "wouter";
+import { useLanguage } from "@/lib/language-context";
 
 export function Footer() {
   const { language } = useLanguage();
+  const [location] = useLocation();
 
-  const isHindi = language === 'hindi';
+  const isHindi = language === "hindi";
+
+  // Don't show footer on login page
+  if (location === "/login") {
+    return null;
+  }
 
   return (
     <footer className="bg-secondary text-secondary-foreground py-12">
@@ -23,10 +29,9 @@ export function Footer() {
               </div>
             </div>
             <p className="text-sm opacity-80">
-              {isHindi 
+              {isHindi
                 ? "भारत की सबसे विश्वसनीय जीवन बीमा कंपनी। आपकी भाषा में, आपके लिए।"
-                : "India's most trusted life insurance company. In your language, for you."
-              }
+                : "India's most trusted life insurance company. In your language, for you."}
             </p>
           </div>
 
@@ -37,22 +42,34 @@ export function Footer() {
             </h4>
             <ul className="space-y-2 text-sm">
               <li>
-                <Link href="/" className="opacity-80 hover:opacity-100 transition-opacity">
+                <Link
+                  href="/"
+                  className="opacity-80 hover:opacity-100 transition-opacity"
+                >
                   {isHindi ? "होम" : "Home"}
                 </Link>
               </li>
               <li>
-                <Link href="/policy-explainer" className="opacity-80 hover:opacity-100 transition-opacity">
+                <Link
+                  href="/policy-explainer"
+                  className="opacity-80 hover:opacity-100 transition-opacity"
+                >
                   {isHindi ? "पॉलिसी खोजें" : "Find Policy"}
                 </Link>
               </li>
               <li>
-                <Link href="/ai-recommender" className="opacity-80 hover:opacity-100 transition-opacity">
+                <Link
+                  href="/ai-recommender"
+                  className="opacity-80 hover:opacity-100 transition-opacity"
+                >
                   {isHindi ? "क्लेम करें" : "Make Claim"}
                 </Link>
               </li>
               <li>
-                <Link href="/education" className="opacity-80 hover:opacity-100 transition-opacity">
+                <Link
+                  href="/education"
+                  className="opacity-80 hover:opacity-100 transition-opacity"
+                >
                   {isHindi ? "शिक्षा केंद्र" : "Education Center"}
                 </Link>
               </li>
@@ -92,7 +109,7 @@ export function Footer() {
               <li>CIN: U66010MH2000PLC128423</li>
               <li>BEWARE OF SPURIOUS CALLS</li>
             </ul>
-            
+
             <div className="mt-4 flex space-x-2">
               <div className="w-12 h-12 bg-secondary-foreground/10 rounded flex items-center justify-center">
                 <Shield size={24} className="opacity-60" />
@@ -109,13 +126,22 @@ export function Footer() {
             © 2024 SBI Life Insurance Co. Ltd. All rights reserved.
           </p>
           <div className="flex space-x-6 mt-4 md:mt-0 text-sm">
-            <Link href="#" className="opacity-80 hover:opacity-100 transition-opacity">
+            <Link
+              href="#"
+              className="opacity-80 hover:opacity-100 transition-opacity"
+            >
               Privacy Policy
             </Link>
-            <Link href="#" className="opacity-80 hover:opacity-100 transition-opacity">
+            <Link
+              href="#"
+              className="opacity-80 hover:opacity-100 transition-opacity"
+            >
               Terms of Service
             </Link>
-            <Link href="#" className="opacity-80 hover:opacity-100 transition-opacity">
+            <Link
+              href="#"
+              className="opacity-80 hover:opacity-100 transition-opacity"
+            >
               Disclaimer
             </Link>
           </div>
