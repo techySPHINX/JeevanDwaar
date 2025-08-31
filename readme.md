@@ -2,15 +2,13 @@
 
 <div align="center">
 
-![JeevanDwaar Logo](https://via.placeholder.com/200x80/0066CC/FFFFFF?text=JeevanDwaar)
-
-**बीमा सरल, जीवन मजबूत** *(Insurance Simple, Life Strong)*
+**बीमा सरल, जीवन मजबूत** _(Insurance Simple, Life Strong)_
 
 [![Live Demo](https://img.shields.io/badge/🌐_Live_Demo-Visit_Site-0066CC?style=for-the-badge)](https://jeevandwaar-life.vercel.app)
 [![GitHub](https://img.shields.io/badge/GitHub-Repository-181717?style=for-the-badge&logo=github)](https://github.com/techySphinx/jeevandwaar)
 [![License](https://img.shields.io/badge/License-Apache_2.0-green?style=for-the-badge)](LICENSE)
 
-*A comprehensive life insurance platform making insurance simple, transparent, and trustworthy for everyone*
+_A comprehensive life insurance platform making insurance simple, transparent, and trustworthy for everyone_
 
 </div>
 
@@ -18,9 +16,25 @@
 
 <div align="center">
 
-https://github.com/techySphinx/jeevandwaar/assets/techySphinx/demo.mp4
+### 📹 Watch Full Platform Demonstration
 
-*🎬 Complete platform walkthrough showcasing voice-first interface, AI recommendations, and multilingual support*
+https://github.com/techySPHINX/jeevandwar/blob/main/demo.mp4
+
+_🎬 Complete platform walkthrough showcasing voice-first interface, AI recommendations, and multilingual support_
+
+**Demo Highlights:**
+
+- 🔐 Aadhaar-based secure authentication system
+- 🗺️ Interactive SHG Mitras location mapping with real-time data
+- 🤖 AI-powered policy recommendation engine in action
+- 🎤 Voice-enabled navigation and audio policy explanations
+- 📱 Fully responsive mobile-optimized interface design
+- 🌐 Seamless multilingual experience (Hindi/English)
+
+**Alternative viewing options:**
+
+- [📥 Download Video](https://github.com/techySPHINX/jeevandwar/raw/main/demo.mp4) (Direct download)
+- [🌐 View in Browser](https://github.com/techySPHINX/jeevandwar/blob/main/demo.mp4) (GitHub viewer)
 
 </div>
 
@@ -29,41 +43,48 @@ https://github.com/techySphinx/jeevandwaar/assets/techySphinx/demo.mp4
 **JeevanDwaar** is a revolutionary life insurance platform specifically designed for **low-literacy and rural/semi-urban customers**. Our platform bridges the digital divide by combining modern technology with intuitive, voice-first interfaces and multilingual support across Hindi, English, Telugu, and Bengali.
 
 ### 🎯 Mission Statement
+
 To democratize life insurance access through technology while maintaining simplicity, transparency, and cultural sensitivity for diverse Indian communities.
 
 ## ✨ Key Features & Capabilities
 
 ### 🎤 **Voice-First Interface**
+
 - **Audio Policy Explanations** in multiple regional languages
 - Voice-guided navigation for low-literacy users
 - Audio content management system
 - Accessible design principles
 
 ### 🤖 **AI-Powered Intelligence**
+
 - **Smart Policy Recommender** with interactive multi-step forms
 - Age-based premium calculations and suggestions
 - Personalized insurance recommendations
 - Intelligent chatbot for real-time customer support
 
 ### 🗺️ **Mitra Network System**
+
 - **Local Agent Management** with SHG integration
 - Interactive maps for finding nearby insurance representatives
 - Community-based advisory services
 - Regional expertise and language support
 
 ### 🎓 **Comprehensive Education Hub**
+
 - **Financial Literacy Content** in multiple languages
 - Interactive learning modules and video tutorials
 - Insurance awareness programs
 - Culturally relevant educational materials
 
 ### 📊 **Advanced Analytics Dashboard**
+
 - **Real-time KPI Tracking** and performance metrics
 - Customer engagement analytics
 - Policy conversion rates and trends
 - Administrative management interface
 
 ### 🛡️ **Security & Authentication**
+
 - **Aadhaar-based Login** with OTP verification
 - Secure session management
 - Multi-factor authentication
@@ -72,6 +93,7 @@ To democratize life insurance access through technology while maintaining simpli
 ## 🛠️ Technology Stack
 
 ### **Frontend Architecture**
+
 ![React](https://img.shields.io/badge/react-18.3.1-%2320232a.svg?style=for-the-badge&logo=react&logoColor=%2361DAFB)
 ![TypeScript](https://img.shields.io/badge/typescript-5.6.2-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![Vite](https://img.shields.io/badge/vite-5.4.19-%23646CFF.svg?style=for-the-badge&logo=vite&logoColor=white)
@@ -79,32 +101,38 @@ To democratize life insurance access through technology while maintaining simpli
 ![shadcn/ui](https://img.shields.io/badge/shadcn%2Fui-Latest-000000.svg?style=for-the-badge&logo=shadcnui&logoColor=white)
 
 ### **Navigation & State Management**
+
 ![Wouter](https://img.shields.io/badge/wouter-3.3.5-FF6B6B.svg?style=for-the-badge)
 ![TanStack Query](https://img.shields.io/badge/tanstack%20query-5.59.0-FF4154.svg?style=for-the-badge&logo=reactquery&logoColor=white)
 ![React Hook Form](https://img.shields.io/badge/react%20hook%20form-7.53.2-%23EC5990.svg?style=for-the-badge&logo=reacthookform&logoColor=white)
 
 ### **Backend Infrastructure**
+
 ![Node.js](https://img.shields.io/badge/node.js-20+-%23339933.svg?style=for-the-badge&logo=nodedotjs&logoColor=white)
 ![Express.js](https://img.shields.io/badge/express.js-4.19.2-%23404d59.svg?style=for-the-badge&logo=express&logoColor=white)
 ![TypeScript](https://img.shields.io/badge/typescript-5.6.2-%23007ACC.svg?style=for-the-badge&logo=typescript&logoColor=white)
 ![Postgres](https://img.shields.io/badge/postgres-16+-%23316192.svg?style=for-the-badge&logo=postgresql&logoColor=white)
 
 ### **Database & ORM**
+
 ![Neon](https://img.shields.io/badge/neon-serverless-00E599.svg?style=for-the-badge&logo=neon&logoColor=white)
 ![Drizzle ORM](https://img.shields.io/badge/drizzle%20orm-Latest-C5F74F.svg?style=for-the-badge&logo=drizzle&logoColor=black)
 ![Zod](https://img.shields.io/badge/zod-validation-3E67B1.svg?style=for-the-badge&logo=zod&logoColor=white)
 
 ### **Build Tools & Development**
+
 ![ESBuild](https://img.shields.io/badge/esbuild-0.24.0-%23FFCF00.svg?style=for-the-badge&logo=esbuild&logoColor=black)
 ![ESLint](https://img.shields.io/badge/ESLint-9.34.0-4B32C3?style=for-the-badge&logo=eslint&logoColor=white)
 ![Framer Motion](https://img.shields.io/badge/Framer_Motion-11.11.17-0055FF?style=for-the-badge&logo=framer)
 
 ### **Deployment & Hosting**
+
 ![Vercel](https://img.shields.io/badge/vercel-Latest-%23000000.svg?style=for-the-badge&logo=vercel&logoColor=white)
 
 ## 🚀 Quick Start Guide
 
 ### Prerequisites
+
 - **Node.js** (v20 or higher)
 - **npm** or **yarn** package manager
 - **PostgreSQL** database (or Neon serverless)
@@ -113,17 +141,20 @@ To democratize life insurance access through technology while maintaining simpli
 ### Installation & Setup
 
 1. **Clone the repository**
+
 ```bash
 git clone https://github.com/yourusername/jeevandwaar.git
 cd jeevandwaar
 ```
 
 2. **Install dependencies**
+
 ```bash
 npm install
 ```
 
 3. **Environment configuration**
+
 ```bash
 # Copy environment template
 cp .env.example .env
@@ -133,6 +164,7 @@ cp .env.example .env
 ```
 
 4. **Database setup**
+
 ```bash
 # Generate database schema
 npm run db:generate
@@ -145,6 +177,7 @@ npm run db:seed
 ```
 
 5. **Start development servers**
+
 ```bash
 # Start backend server
 npm run dev:server
@@ -157,6 +190,7 @@ npm run dev
 ```
 
 6. **Open application**
+
 ```
 Frontend: http://localhost:5173
 Backend API: http://localhost:3000
@@ -213,6 +247,7 @@ jeevandwaar/
 ## 🎨 Design System & Accessibility
 
 ### Color Palette
+
 - **Primary Blue**: #0066CC (SBI Brand Blue)
 - **Secondary**: #004499 (Dark Blue)
 - **Accent**: #FFFFFF (Pure White)
@@ -222,12 +257,14 @@ jeevandwaar/
 - **Error**: #EF4444 (Red)
 
 ### Typography & Fonts
+
 - **Primary**: Inter, system-ui, sans-serif
 - **Body Text**: Optimized for readability across devices
 - **Hindi/Regional**: Noto Sans Devanagari, system fonts
 - **Special**: Italic fonts for slogans and emphasis
 
 ### Accessibility Features
+
 - **WCAG 2.1 AA Compliant** design standards
 - **Screen reader optimized** with proper ARIA labels
 - **Keyboard navigation** support throughout
@@ -240,17 +277,20 @@ jeevandwaar/
 ### Vercel Deployment (Recommended)
 
 1. **Install Vercel CLI**
+
 ```bash
 npm install -g vercel
 ```
 
 2. **Configure and deploy**
+
 ```bash
 vercel login
 vercel --prod
 ```
 
 3. **Environment Variables**
+
 ```bash
 # Set production environment variables
 vercel env add DATABASE_URL
@@ -259,6 +299,7 @@ vercel env add INSURANCE_API_KEY
 ```
 
 ### Alternative Deployment Options
+
 - **Docker containerization** ready
 - **AWS/GCP** cloud deployment compatible
 - **Netlify** frontend deployment support
@@ -267,12 +308,14 @@ vercel env add INSURANCE_API_KEY
 ## 🧪 Testing & Quality Assurance
 
 ### Code Quality Standards
+
 - **ESLint** for code linting and consistency
 - **TypeScript** for type safety and reliability
 - **Prettier** for code formatting
 - **Husky** for pre-commit hooks
 
 ### Testing Strategy
+
 ```bash
 # Run all tests
 npm test
@@ -291,6 +334,7 @@ npm run test:coverage
 ```
 
 ### Performance Metrics
+
 - **Lighthouse Score**: 95+ across all categories
 - **Core Web Vitals**: Optimized for LCP, FID, CLS
 - **Bundle Size**: Tree-shaken and optimized
@@ -299,6 +343,7 @@ npm run test:coverage
 ## 📊 Analytics & Monitoring
 
 ### Key Performance Indicators
+
 - **User Engagement**: Session duration, page views
 - **Conversion Rates**: Quote-to-policy conversions
 - **Voice Usage**: Audio content consumption
@@ -306,6 +351,7 @@ npm run test:coverage
 - **Language Preferences**: Multilingual feature usage
 
 ### Monitoring Stack
+
 - **Error Tracking**: Sentry integration ready
 - **Performance Monitoring**: Web Vitals tracking
 - **User Analytics**: Privacy-compliant tracking
@@ -316,6 +362,7 @@ npm run test:coverage
 We welcome contributions from developers, designers, and domain experts! Here's how you can help:
 
 ### Development Workflow
+
 1. **Fork** the repository
 2. **Create feature branch** (`git checkout -b feature/amazing-feature`)
 3. **Follow coding standards** and write tests
@@ -324,6 +371,7 @@ We welcome contributions from developers, designers, and domain experts! Here's 
 6. **Open Pull Request** with detailed description
 
 ### Contribution Guidelines
+
 - **Code Style**: Follow ESLint and Prettier configurations
 - **Commit Messages**: Use conventional commit format
 - **Documentation**: Update README and inline comments
@@ -332,6 +380,7 @@ We welcome contributions from developers, designers, and domain experts! Here's 
 - **Performance**: Consider impact on low-end devices
 
 ### Areas for Contribution
+
 - **🎤 Voice Interface**: Enhance audio features
 - **🌐 Localization**: Add new regional languages
 - **🤖 AI Features**: Improve recommendation algorithms
@@ -341,6 +390,7 @@ We welcome contributions from developers, designers, and domain experts! Here's 
 ## 📈 Product Roadmap
 
 ### Phase 1: Foundation (Completed ✅)
+
 - [x] Core platform development
 - [x] Voice-first interface implementation
 - [x] AI recommendation system
@@ -348,6 +398,7 @@ We welcome contributions from developers, designers, and domain experts! Here's 
 - [x] Admin dashboard and analytics
 
 ### Phase 2: Enhancement (In Progress 🚧)
+
 - [ ] Mobile application (React Native)
 - [ ] Advanced chatbot with NLP
 - [ ] Real-time payment integration
@@ -355,6 +406,7 @@ We welcome contributions from developers, designers, and domain experts! Here's 
 - [ ] Offline capability for rural areas
 
 ### Phase 3: Scale (Future 🔮)
+
 - [ ] Blockchain integration for claims
 - [ ] IoT integration for health monitoring
 - [ ] Micro-insurance products
@@ -362,30 +414,15 @@ We welcome contributions from developers, designers, and domain experts! Here's 
 - [ ] API marketplace for third-party integrations
 
 ### Phase 4: Innovation (Vision 🚀)
+
 - [ ] AR/VR policy explanations
 - [ ] Predictive health analytics
 - [ ] Smart contract automation
 - [ ] Community-driven insurance pools
 - [ ] AI-powered fraud detection
 
-## 🏆 Recognition & Impact
-
-### Awards & Achievements
-- **🏅 Digital India Initiative** - Recognized for rural digitization
-- **🏆 FinTech Innovation Award 2024** - Best Insurance Platform
-- **🌟 Social Impact Technology** - Community Choice Award
-- **📱 Accessibility Excellence** - WCAG AA Compliance Recognition
-
-### Social Impact Metrics
-- **500,000+** rural users onboarded
-- **95%** user satisfaction in voice interface
-- **40%** increase in insurance literacy
-- **200+** SHG partnerships established
-- **15** regional languages supported (roadmap)
-
-## 🔒 Security & Compliance
-
 ### Security Measures
+
 - **🔐 Data Encryption**: End-to-end encryption for sensitive data
 - **🛡️ Authentication**: Multi-factor authentication with Aadhaar
 - **🔒 API Security**: Rate limiting and request validation
@@ -393,6 +430,7 @@ We welcome contributions from developers, designers, and domain experts! Here's 
 - **📋 Compliance**: GDPR, PDPA, and Indian data protection laws
 
 ### Privacy & Data Protection
+
 - **Minimal Data Collection**: Only necessary information
 - **User Consent**: Explicit consent for data usage
 - **Right to Delete**: Complete data deletion on request
@@ -404,7 +442,9 @@ We welcome contributions from developers, designers, and domain experts! Here's 
 This project is licensed under the **Apache License 2.0** - see the [LICENSE](LICENSE) file for complete details.
 
 ### Open Source Components
+
 We gratefully acknowledge the open source communities and projects that make JeevanDwaar possible:
+
 - **React** and the entire React ecosystem
 - **TypeScript** for type safety
 - **Tailwind CSS** for rapid UI development
@@ -414,6 +454,7 @@ We gratefully acknowledge the open source communities and projects that make Jee
 ## 🙏 Acknowledgments & Credits
 
 ### Development Team
+
 - **Frontend Engineering**: React/TypeScript specialists
 - **Backend Engineering**: Node.js/Express experts
 - **UI/UX Design**: Accessibility-focused designers
@@ -421,12 +462,14 @@ We gratefully acknowledge the open source communities and projects that make Jee
 - **AI/ML**: Recommendation system developers
 
 ### Domain Experts
+
 - **Insurance Industry**: SBI Life partnership team
 - **Rural Technology**: Digital inclusion specialists
 - **Linguistic Experts**: Regional language specialists
 - **Accessibility Consultants**: Inclusive design experts
 
 ### Community Partners
+
 - **Self Help Groups**: Grassroots feedback and testing
 - **Rural Development Organizations**: Field validation
 - **Accessibility Organizations**: Compliance guidance
@@ -442,8 +485,8 @@ We gratefully acknowledge the open source communities and projects that make Jee
 [![Star this repo](https://img.shields.io/github/stars/techySphinx/jeevandwaar?style=social)](https://github.com/techySphinx/jeevandwaar)
 [![Fork this repo](https://img.shields.io/github/forks/techySphinx/jeevandwaar?style=social)](https://github.com/techySphinx/jeevandwaar/fork)
 
-*Bridging the digital divide in insurance through technology, accessibility, and community*
+_Bridging the digital divide in insurance through technology, accessibility, and community_
 
-**बीमा सरल, जीवन मजबूत** | *Insurance Simple, Life Strong*
+**बीमा सरल, जीवन मजबूत** | _Insurance Simple, Life Strong_
 
 </div>
