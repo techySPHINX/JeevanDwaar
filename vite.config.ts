@@ -15,7 +15,6 @@ export default defineConfig({
   resolve: {
     alias: {
       "@": path.resolve(import.meta.dirname, "client", "src"),
-      "@assets": path.resolve(import.meta.dirname, "attached_assets"),
     },
   },
   root: "client",
@@ -26,26 +25,26 @@ export default defineConfig({
     rollupOptions: {
       output: {
         manualChunks(id) {
-          if (id.includes('node_modules')) {
-            if (id.includes('react-dom')) {
-              return 'vendor-react-dom';
+          if (id.includes("node_modules")) {
+            if (id.includes("react-dom")) {
+              return "vendor-react-dom";
             }
-            if (id.includes('react') || id.includes('wouter')) {
-              return 'vendor-react';
+            if (id.includes("react") || id.includes("wouter")) {
+              return "vendor-react";
             }
-            if (id.includes('@tanstack/react-query')) {
-                return 'vendor-tanstack-query';
+            if (id.includes("@tanstack/react-query")) {
+              return "vendor-tanstack-query";
             }
-            if (id.includes('framer-motion')) {
-                return 'vendor-framer-motion';
+            if (id.includes("framer-motion")) {
+              return "vendor-framer-motion";
             }
-            if (id.includes('recharts')) {
-                return 'vendor-recharts';
+            if (id.includes("recharts")) {
+              return "vendor-recharts";
             }
-            if (id.includes('@radix-ui')) {
-                return 'vendor-radix-ui';
+            if (id.includes("@radix-ui")) {
+              return "vendor-radix-ui";
             }
-            return 'vendor';
+            return "vendor";
           }
         },
       },
